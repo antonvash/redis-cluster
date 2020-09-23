@@ -4,7 +4,7 @@ How to run CLUSTER
 make init
 ```
 
-Visit to http://localhost:9000 \
+Visit to http://localhost:9000/haproxy_stats \
 user: `admin` \
 password: `password`
 
