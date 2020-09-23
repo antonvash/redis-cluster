@@ -27,8 +27,8 @@ services:
 
   sentinel:
     image: bitnami/redis-sentinel:latest
-    deploy:
-      replicas: 3
+#      deploy:
+#      replicas: 3
     depends_on:
       - redis1
       - redis2
@@ -36,8 +36,8 @@ services:
     environment:
       - REDIS_MASTER_HOST=redis1
 #      - REDIS_SENTINEL_QUORUM=1
-      - REDIS_SENTINEL_DOWN_AFTER_MILLISECONDS=10000
-      - REDIS_SENTINEL_FAILOVER_TIMEOUT=20000
+      - REDIS_SENTINEL_DOWN_AFTER_MILLISECONDS=5000
+      - REDIS_SENTINEL_FAILOVER_TIMEOUT=5000
 
   lb:
     image: haproxy:2.2-alpine
