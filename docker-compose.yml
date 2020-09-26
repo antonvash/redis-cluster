@@ -51,9 +51,10 @@ services:
     ports:
       - '9000:9000'
       - '6379:6379'
+      - '6380:6380'
         
   benchmark:
-    image: redis:4-alpine
+    image: bitnami/redis:latest
     command: sh -c "echo check redis1; redis-benchmark -h redis1 -t set,get -q -c 1000; echo check redis2; redis-benchmark -h redis2 -t set,get -q -c 1000; echo check redis3; redis-benchmark -h redis3 -t set,get -q -c 1000; echo check lb; redis-benchmark -h lb -t set,get -q -c 1000"
     depends_on:
       - redis1
