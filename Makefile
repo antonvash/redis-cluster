@@ -1,6 +1,5 @@
 init:
-	docker-compose -f docker-compose.yml up -d
-	docker-compose -f docker-compose.yml scale sentinel=3
+	docker-compose -f docker-compose.yml up -d --scale sentinel=3
 
 benchmark:
 	docker-compose -f docker-compose.yml start benchmark
